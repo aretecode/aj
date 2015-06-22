@@ -4,7 +4,7 @@
  * @return void
  *
  */
-function jx(d) {
+function aj(d) {
     var request = new XMLHttpRequest(); //  another ternary;
     
     request.onreadystatechange = d.cb;
