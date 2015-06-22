@@ -7,7 +7,7 @@
  * @return void
  *
  */
-function jx(d) {
+function aj(d) {
     var request = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHttp") : window.XMLHttpRequest ? new XMLHttpRequest() : false; //  another ternary;
     
     // calls the error function if request is false, then returns
