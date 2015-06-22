@@ -6,7 +6,7 @@
  * @return void
  *
  */
-function jxG(d) {
+function ajG(d) {
     var request = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHttp") : window.XMLHttpRequest ? new XMLHttpRequest() : false; //  another ternary;
     
     request.onreadystatechange = function() { 
