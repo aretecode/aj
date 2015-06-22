@@ -6,7 +6,7 @@
  * @return string
  * 
  */
-function jxPP(paramsArray) {
+function ajPP(paramsArray) {
     var urlParams = "";
 
 	for (var i = 0; i < paramsArray.length; i++) {
