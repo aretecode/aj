@@ -3,15 +3,15 @@
 <!-- 
   these examples could be seperated into different files to show more easily which need to be used &amp; copy pasted 
 
-  jxG, jxP, jxGP, jxPP, elementsParameterAdapter, and easyParameterAdapter are my favorite
+  jaG, jaP, jaGP, jaPP, elementsParameterAdapter, and easyParameterAdapter are my favorite
 -->
 
-<script src="../src/dev/jx/jx.js"></script> 
-<script src="../src/dev/jx/jxG.js"></script> 
-<script src="../src/dev/jx/jxP.js"></script>
+<script src="../src/dev/ja/ja.js"></script> 
+<script src="../src/dev/ja/jaG.js"></script> 
+<script src="../src/dev/ja/jaP.js"></script>
 
-<script src="../src/dev/parameter/jxGP.js"></script> 
-<script src="../src/dev/parameter/jxPP.js"></script> 
+<script src="../src/dev/parameter/jaGP.js"></script> 
+<script src="../src/dev/parameter/jaPP.js"></script> 
 
 <script src="../src/dev/parameter/easyParameterAdapter.js"></script> 
 <script src="../src/dev/parameter/elementsParameterAdapter.js"></script> 
@@ -40,7 +40,7 @@
         key: "test"
       }
     );
-    jxP(
+    jaP(
         {
           url: "ajax.php",
           data: easyParameterAdapter(params),
@@ -62,7 +62,7 @@
         key: "test"
       }
     );
-    jxG(
+    jaG(
         {
           url: "ajax.php",
           data: easyParameterAdapter(params),
@@ -83,7 +83,7 @@
       $("ajax_input_third"),
       $("category")
     );
-    jxG(
+    jaG(
         {
           url: "ajax.php",
           data: elementsParameterAdapter(params),
@@ -105,10 +105,10 @@
       {ajax_input_third: $("ajax_input_third").checked},
       {category: $("category").options[$("category").selectedIndex].value}
     );
-    jxG(
+    jaG(
         {
           url: "ajax.php",
-          data: jxGP(params),
+          data: jaGP(params),
           requestType: "GET",
           error: function(result){console.log(result); console.log("error"); },
           success: function(result){console.log(result); console.log("success");},
