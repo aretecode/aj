@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<script src="../src/dev/jx/codegolf.js"></script> 
+<script src="../src/dev/ja/codegolf.js"></script> 
 <script src="../src/dev/parameter/elementsParameterAdapter.js"></script> 
 
 <script>
@@ -15,7 +15,7 @@
       $("ajax_input_fourth"),
       $("catagory")
     );
-    jx(
+    ja(
         {
           u: "ajax.php",
           m: "GET",
@@ -33,7 +33,7 @@
       $("ajax_input_fourth"),
       $("catagory")
     );
-    jx(
+    ja(
         {
           u: "ajax.php",
           m: "POST",
