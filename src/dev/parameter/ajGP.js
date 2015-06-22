@@ -5,7 +5,7 @@
  * @return string
  * 
  */
-function jxGP(params) {
+function ajGP(params) {
     var urlParams = "";    	
 
 	for (var i = 0; i < params.length; i++) {
