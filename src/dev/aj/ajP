@@ -1,12 +1,12 @@
 /**
  * 
- * (a)j(a)x Post
+ * aj(ax) Post
  * 
  * @param  {} params 
  * @return void
  *
  */
-function jxP(d) {
+function ajP(d) {
     var request = window.ActiveXObject ? new ActiveXObject("Microsoft.XMLHttp") : window.XMLHttpRequest ? new XMLHttpRequest() : false; //  another ternary;
     
     request.onreadystatechange = function() { 
