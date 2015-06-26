@@ -1,6 +1,6 @@
 /**
  * 
- * (a)j(a)x (Get or Post)
+ * aj(ax) (Get or Post)
  * @TODO: include option for responseAsObject
  * 
  * @param  {} params 
@@ -23,9 +23,25 @@ function aj(d) {
             if (d.done instanceof Function) d.done(request)
         }
     };
-
-    request.open((d.requestType||"POST"), d.url + (d.requestType == "GET" ? + "?" + d.data : ""), true);
+    //  + (d.requestType == "GET" ? + "?" + d.data : "")
+    console.log(d);
+    request.open(
+        (d.requestType||"POST"), 
+        d.url + (
+            d.route 
+            ? 
+                "/" + d.data 
+            : 
+                d.requestType == "GET" 
+                ? 
+                    "?" + d.data 
+                : 
+                    ""
+        ), 
+        true);
+    
     request.setRequestHeader('X-Requested-With', (d.requestedWith||'XMLHttpRequest'));
     request.setRequestHeader('Content-type', (d.contentType||'application/x-www-form-urlencoded')); 
     request.send(d.data);
+    console.log(request);
 }
