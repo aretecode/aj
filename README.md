@@ -20,5 +20,5 @@ Support can be added, in IE cache & parsing json & xml might have problems.
 # @TODO:
 username & password
 listeners & events in different files
-
+make it support more than json and remove json dependency
 Use http://httpstatus.es/
