@@ -11,10 +11,23 @@ function ajP(d) {
     
     request.onreadystatechange = function() { 
         if (4 == request.readyState) {
-            if (200 == request.status) 
-                d.success(request.responseText)
+            if ('undefined' !== typeof d.listeners[request.status]) {
+                // if it is 200, see if it has responseAsObject, then json parse it. If not 200, use the whole request
+                d.listeners[request.status](
+                    200 == request.status
+                    ? 
+                        d.responseAsObject 
+                        ? 
+                            JSON.parse(request.responseText) 
+                        : 
+                            request.responseText
+                    :
+                        request
+                )
+            } 
             else 
-                d.error(request)
+                d.listeners.other(request);
+
 
             if (d.done instanceof Function) d.done(request); 
         }
