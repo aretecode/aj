@@ -24,4 +24,4 @@ more HTTP Methods
 username & password
 listeners & events in different files
 
-Use the (http status codes)[http://httpstatus.es/]
+Use http://httpstatus.es/
