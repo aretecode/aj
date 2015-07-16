@@ -3,15 +3,15 @@
 <!-- 
   these examples could be seperated into different files to show more easily which need to be used &amp; copy pasted 
 
-  jaG, jaP, jaGP, jaPP, elementsParameterAdapter, and easyParameterAdapter are my favorite
+  ajG, ajP, ajGP, ajPP, elementsParameterAdapter, and easyParameterAdapter are my favorite
 -->
 
-<script src="../src/dev/ja/ja.js"></script> 
-<script src="../src/dev/ja/jaG.js"></script> 
-<script src="../src/dev/ja/jaP.js"></script>
+<script src="../src/dev/aj/aj.js"></script> 
+<script src="../src/dev/aj/ajG.js"></script> 
+<script src="../src/dev/aj/ajP.js"></script>
 
-<script src="../src/dev/parameter/jaGP.js"></script> 
-<script src="../src/dev/parameter/jaPP.js"></script> 
+<script src="../src/dev/parameter/ajGP.js"></script> 
+<script src="../src/dev/parameter/ajPP.js"></script> 
 
 <script src="../src/dev/parameter/easyParameterAdapter.js"></script> 
 <script src="../src/dev/parameter/elementsParameterAdapter.js"></script> 
@@ -27,6 +27,7 @@
 
   function $(s) { return document.getElementById(s) }
 
+
   // using a mix, using the easyParameterAdapter
   function testEasyPost() {
     params = new Array();
@@ -40,12 +41,17 @@
         key: "test"
       }
     );
-    jaP(
+    ajP(
         {
           url: "ajax.php",
           data: easyParameterAdapter(params),
-          error: function(result){console.log(result); console.log("error"); },
-          success: function(result){console.log(result); console.log("success");},
+          listeners: {
+            404: function(result){console.log(result); console.log("404");},
+            201: function(result){console.log(result); console.log("201");},
+            200: function(result){console.log(result); console.log("200");},
+            303: function(result){console.log(result); console.log("303");},
+            other: function(result){console.log(result); console.log("other");}
+          },
           done: function(result){console.log(result); console.log("done");}
         } 
     );    
@@ -62,12 +68,17 @@
         key: "test"
       }
     );
-    jaG(
+    ajG(
         {
           url: "ajax.php",
           data: easyParameterAdapter(params),
-          error: function(result){console.log(result); console.log("error"); },
-          success: function(result){console.log(result); console.log("success");},
+          listeners: {
+            404: function(result){console.log(result); console.log("404");},
+            201: function(result){console.log(result); console.log("201");},
+            200: function(result){console.log(result); console.log("200");},
+            303: function(result){console.log(result); console.log("303");},
+            other: function(result){console.log(result); console.log("other");}
+          },
           done: function(result){console.log(result); console.log("done");}
         } 
     );    
@@ -83,12 +94,17 @@
       $("ajax_input_third"),
       $("category")
     );
-    jaG(
+    ajG(
         {
           url: "ajax.php",
           data: elementsParameterAdapter(params),
-          error: function(result){console.log(result); console.log("error"); },
-          success: function(result){console.log(result); console.log("success");},
+          listeners: {
+            404: function(result){console.log(result); console.log("404");},
+            201: function(result){console.log(result); console.log("201");},
+            200: function(result){console.log(result); console.log("200");},
+            303: function(result){console.log(result); console.log("303");},
+            other: function(result){console.log(result); console.log("other");}
+          },
           done: function(result){console.log(result); console.log("done");}
         } 
     );      
@@ -105,21 +121,25 @@
       {ajax_input_third: $("ajax_input_third").checked},
       {category: $("category").options[$("category").selectedIndex].value}
     );
-    jaG(
+    ajG(
         {
           url: "ajax.php",
-          data: jaGP(params),
+          data: ajGP(params),
           requestType: "GET",
-          error: function(result){console.log(result); console.log("error"); },
-          success: function(result){console.log(result); console.log("success");},
+          listeners: {
+            404: function(result){console.log(result); console.log("404");},
+            201: function(result){console.log(result); console.log("201");},
+            200: function(result){console.log(result); console.log("200");},
+            303: function(result){console.log(result); console.log("303");},
+            other: function(result){console.log(result); console.log("other");}
+          },
           done: function(result){console.log(result); console.log("done");}
         } 
     );    
   }
   function testAjax() {
-
-    // testEasyPost();
-    testEasyGet()
+    testEasyPost();
+    // testEasyGet()
     // testElementsGet();
     // testLongerGet();
 
