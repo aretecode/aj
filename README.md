@@ -23,3 +23,5 @@ Support can be added, in IE cache & parsing json & xml might have problems.
 more HTTP Methods
 username & password
 listeners & events in different files
+
+Use the (http status codes)[http://httpstatus.es/]
