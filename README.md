@@ -1,4 +1,5 @@
 # aj(ax)
+[![Build Status](https://secure.travis-ci.org/aretecode/aj.svg)](https://travis-ci.org/aretecode/aj)
 Smallest & fastest ajax library, made modular.
 
 # parameter

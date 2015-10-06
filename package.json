@@ -20,6 +20,6 @@
     "sinon": "latest"
   },    
   "scripts": {                 
-      "test": "grunt test:testonly"
+    "test": "grunt test:testonly"
   }
 }

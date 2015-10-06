@@ -38,5 +38,5 @@
     "tests",
     "examples"
   ],
-  "private": true
+  "private": false
 }
