@@ -1,0 +1,75 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link rel="stylesheet" href="../node_modules/mocha/mocha.css" />
+</head>
+<body>
+  <div id="mocha"></div>
+
+  <!-- HTML to test -->
+  <form method="POST">
+      <label for="pickle">Category</label>
+      <select name="pickle" id="pickle" class="ajable selects">
+          <option>ickleme-tickleme-pickleme</option>
+          <option selected>ickleme-tickleme-pickleme-too</option>
+          <option>ickleme-tickleme-pickleme-shoe</option>
+      </select>
+      <input type="text" name="textual_input_input" id="textual_input_input" class="ajable inputs" value="textTestValue"/>
+      <input type="num" name="numerical_input_example" id="numerical_input_example" class="ajable inputs" value="42"/>
+      <input type="checkbox" name="checkbox_input" id="checkbox_input" checked=checked/>
+
+      <p><input type="radio" name="answer" value="true" class="ajable radios" checked="checked">True</p>
+      <p><input type="radio" name="answer" value="false" class="ajable radios">False</p>
+
+      <input type="button" onclick="useInputElements();" id="submit_button" value="submit_button"/>
+  </form>
+
+
+
+  <!-- mocha + chai + sinon -->
+  <script src="../node_modules/mocha/mocha.js"></script>
+  <script src="../node_modules/chai/chai.js"></script>
+  <script src="../node_modules/sinon/pkg/sinon-server.js"></script>
+ 
+  <script>
+
+  </script>
+
+  <!-- Test dependencies -->
+  <script src="../src/dataUrlToJson.js"></script> 
+  <script src="../src/Params.js"></script> 
+  <script src="../src/ParamsBuilder.js"></script> 
+
+  <script src="../src/ajResponseAsJson.js"></script>
+  <script src="../src/aj.js"></script>
+  <script src="../src/ajG.js"></script>
+  <script src="../src/ajP.js"></script>
+
+  <script>
+    function $(s) { return document.getElementById(s) }
+    function $_(s) { return document.getElementsByClassName(s) }   
+  </script>
+
+  <!-- Setup Mocha -->
+  <script>
+    mocha.setup('bdd')
+    mocha.reporter('Spec'); // or `html`
+  </script>
+
+
+  <!-- Tests -->
+  <script src="param/dataUrlToJson.js"></script>
+  <script src="param/ParamsBuilderTest.js"></script>
+  <script src="request/ajGTest.js"></script>
+  <script src="request/ajPTest.js"></script>
+
+  <!-- Run Mocha -->
+  <script>
+    // Only tests run in real browser, injected script run if options.run == true
+    if (navigator.userAgent.indexOf('PhantomJS') < 0) {
+      mocha.run();
+    }
+  </script>
+</body>
+</html>

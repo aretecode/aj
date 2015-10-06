@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<title>Aj</title>
+
+<script src="../src/aj.js"></script>
+<script src="../src/ajG.js"></script>
+<script src="../src/ajP.js"></script>
+
+<script src="../src/dataUrlToJson.js"></script>
+<script src="../src/Params.js"></script>
+<script src="../src/ParamsBuilder.js"></script>
+
+<script src="example.js"></script>
+
+<script>
+
+  var pb = new ParamsBuilder;
+
+  //// params
+  
+  function identityAndObjectParams() {
+    paramsArray = new Array();
+    paramsArray.push(
+      $("textual_input_input"),
+      $("numerical_input_example"),
+      $("checkbox_input"),
+      $("category"),
+      {key: "test"}
+    );
+    return Params.ez(paramsArray);
+  }
+  function manualGetParams() {
+    paramsArray = new Array();
+    paramsArray.push(
+      {textual_input_input: $("textual_input_input").value},
+      {numerical_input_example: $("numerical_input_example").value},
+      {checkbox_input: $("checkbox_input").checked},
+      {pickle: $("pickle").options[$("pickle").selectedIndex].value}
+    );
+
+    return Params.get(paramsArray);
+  }
+  function elementCollectionPlusObjectParams() {
+    var keys = [{
+        key: "test"
+    }];
+    var ajable = $_("ajable");
+    var fullUrlData = keys.concat(ajable);
+
+    return Params.ez(fullUrlData);
+  }
+  function elementCollectionParams() {
+    var ajable = $_("ajable");    
+    return Params.elements(ajable); // pb.elements(ajable).get();
+  }
+  function elementCollectionParams() {
+    var ajable = $_("ajable");    
+    return pb.elements(ajable).route();
+  }
+  function optionElementParams() {
+    var pickle = $("pickle");
+    return Params.option(pickle); // options for multiple
+  }
+  function radiosElementParams() {
+    var radios = $_("radios");
+    return Params.radios(radios);
+  }
+  function checkboxElementParams() {
+    var checkboxes = $("checkbox_input");
+    return Params.checkbox(checkboxes); 
+  }
+
+  //// Aj -- GET & POST
+  function useAjPost(params) {
+    ajP({
+        url: "ajax.php",
+        data: params,
+        listeners: exampleAjaxListeners() // in example.js
+    });
+  }
+  function useAjGet(params) {
+    ajP({
+        url: "ajax.php",
+        data: params,
+        listeners: exampleAjaxListeners() // in example.js
+    });
+  }
+
+  function exampleAjax() {
+    arrayOfParams = new Array();
+    arrayOfParams.push(
+      identityAndObjectParams(),
+      manualGetParams(),
+      elementCollectionPlusObjectParams(),
+      elementCollectionParams(),
+      optionElementParams(),
+      radiosElementParams(),
+      checkboxElementParams()    
+    );
+
+    console.log(arrayOfParams);
+    
+    // could pick any index, or call them directly
+    var postIndex = 1; 
+    var postParamsToSend = arrayOfParams[postIndex];
+    useAjPost(postParamsToSend);
+
+    var getIndex = 2; 
+    var getParamsToSend = arrayOfParams[getIndex];
+    useAjGet(getParamsToSend);
+
+    return false;
+  }
+</script>
+
+<form method="POST">
+    <label for="pickle">Category</label>
+    <select name="pickle" id="pickle" class="ajable selects">
+        <option>ickleme-tickleme-pickleme</option>
+        <option selected>ickleme-tickleme-pickleme-too</option>
+        <option>ickleme-tickleme-pickleme-shoe</option>
+    </select>
+    <input type="text" name="textual_input_input" id="textual_input_input" class="ajable inputs" value="textTestValue"/>
+    <input type="num" name="numerical_input_example" id="numerical_input_example" class="ajable inputs" value="42"/>
+    <input type="checkbox" name="checkbox_input" id="checkbox_input" class="ajable" checked/>
+
+    <p><input type="radio" name="answer" value="true" class="ajable radios" checked="checked">True</p>
+    <p><input type="radio" name="answer" value="false" class="ajable radios">False</p>
+
+    <input type="button" onclick="exampleAjax();" id="submit_button" value="submit_button"/>
+</form>

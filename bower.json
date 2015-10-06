@@ -1,0 +1,42 @@
+{
+  "name": "aretecode/aj",
+  "license": "MIT",
+  "description": "Smallest & fastest ajax library with differentiations according to the use case.",
+  "main": [
+    "src/aj.js",
+    "src/ajG.js",
+    "src/ajP.js",
+    "src/Params.js",
+    "src/ParamsBuilder.js",
+    "src/dataUrlToJson.js"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "~2.3.3",
+    "chai": "~3.3.0"
+  },
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "motion",
+    "physics",
+    "particles"
+  ],
+  "authors": [
+    "AreteCode"
+  ],
+  "ignore": [
+    "codegolf",
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "examples"
+  ],
+  "private": true
+}

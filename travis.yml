@@ -1,0 +1,25 @@
+npm install -g mocha
+npm install chai
+npm install phantomjs
+npm install grunt
+sudo npm install -g grunt-cli
+"phantomjs": "~2.0.0"
+
+npm install grunt-contrib-jshint --save-dev
+npm install grunt-contrib-watch --save-dev
+npm install grunt-contrib-uglify --save-dev
+
+
+# 1: This tells Travis CI it is a Node.js project, we need this to run our
+#    packages.
+# 2: It is possible to test your project on several versions of Node.js on each
+#    run. Version 0.10 is the lastest stable release and is good enough for this
+#    project.
+# 3: Before Travis CI runs the "npm install" command it will run whatever we
+#    specify here. Because we need the grunt-cli to be available so we can
+#    start the unit tests we can instruct Travis CI to install it now.
+language: node_js                 # [1]
+node_js:
+  - "0.10"                        # [2]
+before_install:
+  - "npm install -g grunt-cli"    # [3]

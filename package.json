@@ -1,0 +1,25 @@
+{    
+  "name": "aj",    
+  "version": "0.2.0", 
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "latest",
+    
+    "grunt": "latest",
+    "grunt-cli": "latest",
+    "grunt-contrib-jshint": "^0.11.3",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-uglify": "latest",        
+    "grunt-mocha": "latest",        
+    "load-grunt-config": "^0.13.1",
+  
+    "mocha": "latest",
+    "phantom": "latest",    
+    "expect.js": "latest",
+    "requirejs": "latest",
+    "sinon": "latest"
+  },    
+  "scripts": {                 
+      "test": "grunt test:testonly"
+  }
+}
