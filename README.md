@@ -1,6 +1,6 @@
 # aj(ax)
 [![Build Status](https://secure.travis-ci.org/aretecode/aj.svg)](https://travis-ci.org/aretecode/aj)
-[![License](https://img.shields.io/badge/licence-MIT-brightgreen.svg)](https://github.com/aretecode/aj/blob/master/package.json)
+[![License](https://img.shields.io/badge/licence-MIT-brightgreen.svg)](https://github.com/aretecode/aj/blob/master/LICENSE)
 
 Smallest & fastest ajax library, made modular.
 
@@ -63,7 +63,7 @@ The JS
 var ajable = document.getElementsByClassName("ajable");    
 var dataurl = Params.elements(ajable); // pb.elements(ajable).get();
 
-// aj(ax)
+// aj(ax) Post
 ajP({
     url: "ajax.php",
     data: params,
@@ -83,8 +83,7 @@ ajP({
 
 ## @TODO:
 * [ ] username & password
-* [ ] listeners & events in different files
-* [ ] make it support more than json and remove json dependency
+* [x] remove json dependency
 * [ ] Use http://httpstatus.es/
 * [x] readyState listener
 * [x] change names to shorter
