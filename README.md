@@ -6,9 +6,9 @@ Smallest & fastest ajax library, made modular.
 
 ## small & fast
 Tiny size & blazing performance. 
-codegolf: 173 bytes gzipped (218 bytes uncompressed)
-Param: 662 bytes gzipped 
-Param.ez: 284 bytes gzipped -if you copy it into an independent function- (408 bytes uncompressed)
+* codegolf: 173 bytes gzipped (218 bytes uncompressed)
+* Param: 662 bytes gzipped 
+* Param.ez: 284 bytes gzipped -if you copy it into an independent function- (408 bytes uncompressed)
 
 ## why
 When you want to do ajax but don't want to use an entire library like jquery...
