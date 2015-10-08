@@ -1,7 +1,7 @@
 # aj(ax)
 [![Build Status](https://secure.travis-ci.org/aretecode/aj.svg)](https://travis-ci.org/aretecode/aj)
 [![License](https://img.shields.io/badge/licence-MIT-brightgreen.svg)](https://github.com/aretecode/aj/blob/master/LICENSE)
-
+[![Bower version](https://badge.fury.io/bo/aj.svg)](https://badge.fury.io/bo/aj)
 Smallest & fastest ajax library, made modular.
 
 ## small & fast

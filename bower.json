@@ -1,6 +1,7 @@
 {
   "name": "aretecode/aj",
   "license": "MIT",
+  "version": "0.2.3"
   "description": "Smallest & fastest ajax library with differentiations according to the use case.",
   "keywords": [
     "ajax", "arete", "forms"

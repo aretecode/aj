@@ -39,7 +39,7 @@ ParamsBuilder.prototype.get = function() {
 };
 ParamsBuilder.prototype.route = function() {
     /**
-     * turn the & into /
+     * turn `&` and `=` into /
      */
     return this.data.replace(/([A-Za-z_-]*?)(?=\=)/g, "").replace(/&/g, "").replace(/=/g, "/");
 };
