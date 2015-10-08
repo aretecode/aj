@@ -41,16 +41,8 @@ ParamsBuilder.prototype.route = function() {
     /**
      * turn the & into /
      */
-    var d = this.data; // this.data.replace("/([A-Za-z]*?)(?=\=)/g", "/"); // .replace("&", "/")
-    d = d.replace(/([A-Za-z_-]*?)(?=\=)/g, "");
-    d = d.replace(/&/g, "");
-    d = d.replace(/=/g, "/");
-    return d;
+    return this.data.replace(/([A-Za-z_-]*?)(?=\=)/g, "").replace(/&/g, "").replace(/=/g, "/");
 };
 ParamsBuilder.prototype.reset = function() {
     this.data = "";
 };
-
-function replaceAll(string, find, replace) {
-  return string.replace(new RegExp(escapeRegExp(find), "g"), replace);
-}
